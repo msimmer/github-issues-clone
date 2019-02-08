@@ -12,3 +12,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.issue {
+  display: flex;
+  align-items: center;
+}
+
+.issue__details {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.issue__details__title {
+  font-weight: 700;
+  display: flex;
+}
+
+.issue__details__meta {
+  display: flex;
+}
+
+.assignee {
+}
+.assignee--0 {
+  z-index: 3;
+}
+.assignee--1 {
+  z-index: 2;
+  transform: translateX(5px), translateY(5px);
+}
+.assignee--2 {
+  z-index: 1;
+  transform: translateX(5px), translateY(5px);
+}
