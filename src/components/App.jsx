@@ -14,7 +14,9 @@ const client = new ApolloClient({
 
 const App = () => (
   <ApolloProvider client={client}>
-    <Issues states={["OPEN"]} />
+    <main>
+      <Issues states={["OPEN"]} />
+    </main>
   </ApolloProvider>
 );
 

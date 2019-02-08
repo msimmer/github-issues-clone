@@ -17,3 +17,30 @@ export const contrastText = hex => {
 
   return contrast([r, g, b], [0, 0, 0]) > 4 ? "white" : "black";
 };
+
+export const diffTimeToHuman = date => {
+  const now = Date.now();
+  const past = new Date(date).getTime();
+
+  let diff = now - past;
+  let plur = "";
+
+  diff /= 60 * 1000;
+  if (diff < 60) {
+    diff = Math.round(diff);
+    plur = diff > 1 ? "s" : "";
+    return `${diff} minute${plur}`;
+  }
+
+  diff /= 60;
+  if (diff < 24) {
+    diff = Math.round(diff);
+    plur = diff > 1 ? "s" : "";
+    return `${diff} hour${plur}`;
+  }
+
+  diff /= 24;
+  diff = Math.round(diff);
+  plur = diff > 1 ? "s" : "";
+  return `${diff} day${plur}`;
+};
