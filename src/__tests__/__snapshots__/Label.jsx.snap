@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Label /> contrasts the color 1`] = `
+<div
+  className="label"
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "color": "black",
+    }
+  }
+>
+  foo
+</div>
+`;
+
+exports[`<Label /> contrasts the color 2`] = `
+<div
+  className="label"
+  style={
+    Object {
+      "backgroundColor": "#000000",
+      "color": "white",
+    }
+  }
+>
+  foo
+</div>
+`;

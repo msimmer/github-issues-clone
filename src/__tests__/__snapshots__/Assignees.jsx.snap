@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Assignees /> matches the snapshots 1`] = `""`;
+
+exports[`<Assignees /> matches the snapshots 2`] = `
+Array [
+  <Assignee
+    avatarUrl="foo.jpg"
+    id={1}
+    index={0}
+    key="1"
+    login="foo"
+  />,
+  <Assignee
+    avatarUrl="bar.jpg"
+    id={2}
+    index={1}
+    key="2"
+    login="bar"
+  />,
+]
+`;

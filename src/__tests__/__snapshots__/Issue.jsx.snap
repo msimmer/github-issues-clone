@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Issue /> matches the snapshots 1`] = `
+<div
+  className="issue"
+>
+  <div
+    className="issue__icon material-icons"
+  >
+    error_outline
+  </div>
+  <div
+    className="issue__details"
+  >
+    <div
+      className="issue__details__title"
+    >
+      <div
+        className="issue__details__title--text"
+      >
+        foo
+      </div>
+      <Labels />
+    </div>
+    <div
+      className="issue__details__meta"
+    >
+      <div>
+        #
+        1
+      </div>
+      <div>
+        opened 
+        21 minutes
+         ago by
+      </div>
+      <div>
+        bar
+      </div>
+    </div>
+  </div>
+  <div
+    className="issue__assignees"
+  >
+    <Assignees />
+  </div>
+  <div
+    className="issue__comments"
+  />
+</div>
+`;
+
+exports[`<Issue /> matches the snapshots 2`] = `
+<div
+  className="issue"
+>
+  <div
+    className="issue__icon material-icons"
+  >
+    error_outline
+  </div>
+  <div
+    className="issue__details"
+  >
+    <div
+      className="issue__details__title"
+    >
+      <div
+        className="issue__details__title--text"
+      >
+        foo
+      </div>
+      <Labels
+        0={
+          Object {
+            "color": "000000",
+            "name": "l1",
+          }
+        }
+      />
+    </div>
+    <div
+      className="issue__details__meta"
+    >
+      <div>
+        #
+        1
+      </div>
+      <div>
+        opened 
+        21 minutes
+         ago by
+      </div>
+      <div>
+        bar
+      </div>
+    </div>
+  </div>
+  <div
+    className="issue__assignees"
+  >
+    <Assignees />
+  </div>
+  <div
+    className="issue__comments"
+  />
+</div>
+`;
+
+exports[`<Issue /> matches the snapshots 3`] = `
+<div
+  className="issue"
+>
+  <div
+    className="issue__icon material-icons"
+  >
+    error_outline
+  </div>
+  <div
+    className="issue__details"
+  >
+    <div
+      className="issue__details__title"
+    >
+      <div
+        className="issue__details__title--text"
+      >
+        foo
+      </div>
+      <Labels
+        0={
+          Object {
+            "color": "000000",
+            "name": "l1",
+          }
+        }
+      />
+    </div>
+    <div
+      className="issue__details__meta"
+    >
+      <div>
+        #
+        1
+      </div>
+      <div>
+        opened 
+        21 minutes
+         ago by
+      </div>
+      <div>
+        bar
+      </div>
+    </div>
+  </div>
+  <div
+    className="issue__assignees"
+  >
+    <Assignees />
+  </div>
+  <div
+    className="issue__comments"
+  >
+    <div
+      className="issue__comments__counter"
+    >
+      <div
+        className="material-icons"
+      >
+        chat_bubble_outline
+      </div>
+      <div>
+        1
+      </div>
+    </div>
+  </div>
+</div>
+`;
