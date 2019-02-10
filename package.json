@@ -50,6 +50,7 @@
     "react-dom": "^16.8.1",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
@@ -70,7 +71,9 @@
     "enzyme-adapter-react-16": "^1.9.1",
     "enzyme-to-json": "^3.3.5",
     "flow-bin": "^0.92.1",
-    "react-test-renderer": "^16.8.1"
+    "flow-typed": "^2.5.1",
+    "react-test-renderer": "^16.8.1",
+    "wait-for-expect": "^1.1.0"
   },
   "scripts": {
     "start": ". ./env.sh && node scripts/start.js",
