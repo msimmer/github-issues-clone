@@ -7,18 +7,23 @@ import Issues from "../components/Issues";
 
 configure({ adapter: new Adapter() });
 
+const mockProps = {
+  repository: {
+    issues: {
+      edges: [
+        {
+          node: {
+            id: 1
+          }
+        }
+      ]
+    }
+  }
+};
+
 describe("<Issues />", () => {
   it("matches the snapshots", () => {
-    const component = shallow(<Issues states={["OPEN"]} />);
-    expect(toJSON(component)).toMatchSnapshot();
-
-    component.setProps({ states: ["CLOSE"] });
-    expect(toJSON(component)).toMatchSnapshot();
-
-    component.setProps({ states: ["CLOSE", "OPEN"] });
-    expect(toJSON(component)).toMatchSnapshot();
-
-    component.setProps({ states: [] });
+    const component = shallow(<Issues {...mockProps} />);
     expect(toJSON(component)).toMatchSnapshot();
   });
 });
