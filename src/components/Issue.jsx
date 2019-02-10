@@ -1,9 +1,13 @@
-import React from "react";
+// @flow
+
+import type { Issue as IssueType } from "../types";
+
+import * as React from "react";
 import Labels from "./Labels";
 import Assignees from "./Assignees";
 import { diffTimeToHuman } from "../util";
 
-const Issue = props => (
+const Issue = (props: IssueType): React.Element<"div"> => (
   <div className="issue">
     <div className="issue__icon material-icons">
       {props.state === "OPEN" ? "error_outline" : "check_circle_outline"}
@@ -16,7 +20,9 @@ const Issue = props => (
       <div className="issue__details__meta">
         <div>#{props.number}</div>
         <div>opened {diffTimeToHuman(props.publishedAt)} ago by</div>
-        <div>{props.author.login}</div>
+        {props.author && props.author.login ? (
+          <div>{props.author.login}</div>
+        ) : null}
       </div>
     </div>
     <div className="issue__assignees">
