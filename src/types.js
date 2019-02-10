@@ -39,7 +39,11 @@ export type IssueNode = {
 
 export type Repository = {
   issues: {
-    edges: IssueNode[]
+    edges: IssueNode[],
+    pageInfo: {
+      hasNextPage: boolean,
+      hasPreviousPage: boolean
+    }
   }
 };
 

@@ -1,10 +1,6 @@
-// @flow
-
 import gql from "graphql-tag";
-import { graphql, Props } from "react-apollo";
-import type { InputProps, Response, Variables } from "./types";
 
-const GITHUB_ISSUES_QUERY = gql`
+export const GITHUB_ISSUES_QUERY = gql`
   query($states: [IssueState!], $after: String) {
     repository(owner: "facebook", name: "react") {
       issues(
@@ -14,6 +10,10 @@ const GITHUB_ISSUES_QUERY = gql`
         after: $after
       ) {
         totalCount
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+        }
         edges {
           cursor
           node {
@@ -52,13 +52,3 @@ const GITHUB_ISSUES_QUERY = gql`
     }
   }
 `;
-
-const withFilters = graphql<InputProps, Response, Variables, Props>(
-  GITHUB_ISSUES_QUERY,
-  {
-    options: ({ states }) => ({ variables: { states } })
-  },
-  ({ data }) => ({ ...data })
-);
-
-export default withFilters;

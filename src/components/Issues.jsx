@@ -1,21 +1,14 @@
 // @flow
 
-import React from "react";
-import { ChildProps } from "react-apollo";
-import withFilters from "../withFilters";
-import Loading from "./Loading";
+import type { Repository, IssueNode } from "../types";
+
+import * as React from "react";
 import Issue from "./Issue";
-import type { InputProps, Response } from "../types";
 
-class Issues extends React.Component<ChildProps<InputProps, Response>> {
-  render = () => {
-    const { loading, repository, error } = this.props.data;
-    if (loading) return <Loading />;
-    if (error) return <div>error</div>;
-    return repository.issues.edges.map(({ node }) => (
-      <Issue key={node.id} {...node} />
-    ));
-  };
-}
+const Issues = (props: { repository: Repository }): React.Node => {
+  const { edges } = props.repository.issues;
+  if (edges.length < 1) return null;
+  return edges.map(({ node }: IssueNode) => <Issue key={node.id} {...node} />);
+};
 
-export default withFilters(Issues);
+export default Issues;

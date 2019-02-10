@@ -1,9 +1,14 @@
 import React from "react";
-import ApolloClient from "apollo-boost";
+import { Provider } from "react-redux";
 import { ApolloProvider } from "react-apollo";
-import Issues from "./Issues";
+import { ApolloClient } from "apollo-client";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import { HttpLink } from "apollo-link-http";
+import store from "../store";
+import Main from "./Main";
 
-const client = new ApolloClient({
+const cache = new InMemoryCache();
+const link = new HttpLink({
   uri: "https://api.github.com/graphql",
   headers: {
     Authorization: `Bearer ${
@@ -12,12 +17,17 @@ const client = new ApolloClient({
   }
 });
 
+const client = new ApolloClient({
+  cache,
+  link
+});
+
 const App = () => (
-  <ApolloProvider client={client}>
-    <main>
-      <Issues states={["OPEN"]} />
-    </main>
-  </ApolloProvider>
+  <Provider store={store}>
+    <ApolloProvider client={client}>
+      <Main />
+    </ApolloProvider>
+  </Provider>
 );
 
 export default App;
