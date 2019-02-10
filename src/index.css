@@ -66,21 +66,30 @@ main {
   font-weight: 700;
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 5px;
+}
+
+.issue__details__title--text {
+  margin-right: 10px;
+  margin-bottom: 5px;
 }
 
 .label {
   padding: 3px 5px;
   font-size: 12px;
   border-radius: 2px;
-  margin-left: 10px;
+  margin-right: 10px;
   white-space: nowrap;
   height: 23px;
+}
+
+.issue__comments {
+  min-width: 50px;
 }
 
 .issue__comments__counter {
   display: flex;
   font-size: 12px;
+  font-weight: 500;
   color: #586069;
 }
 
@@ -88,22 +97,58 @@ main {
   padding-left: 5px;
 }
 
-.assignee {
+.issue__assignees {
+  position: relative;
 }
+
+.assignee {
+  position: absolute;
+  left: -24px;
+}
+
+.assignee img {
+  border-radius: 2px;
+}
+
 .assignee--0 {
   z-index: 3;
 }
 .assignee--1 {
   z-index: 2;
-  transform: translateX(5px), translateY(5px);
+  transform: translateX(3px) translateY(3px);
 }
 .assignee--2 {
   z-index: 1;
-  transform: translateX(5px), translateY(5px);
+  transform: translateX(6px) translateY(6px);
+}
+
+.button__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  -webkit-appearance: none;
+  border: 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 10px;
+  background: white;
+  color: #0366d6;
+  font-weight: 700;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  margin: 10px 10px 10px 0;
+}
+
+button:hover {
+  background-color: #f6f8fa;
 }
 
 @media screen and (max-width: 960px) {
   .issue__details__title--text {
+    margin-right: 0;
     flex: 1 1 100%;
   }
   .label {
